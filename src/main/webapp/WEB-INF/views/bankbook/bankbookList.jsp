@@ -4,14 +4,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<c:import url="../template/bootStrap.jsp"></c:import>
+   
+<title>BankBook</title>
 </head>
 <body>
-	<h1>BankBook List</h1>
+	<c:import url="../template/header.jsp"></c:import>
+
+
+<div class="container">
+	<h2>BankBook List</h2>
 	
-	<table>
-		<thead>
+	<table class="table">
+		<thead class="thead-dark">
 			<tr>
 				<th>Name</th>
 				<th>Rate</th>
@@ -30,6 +39,6 @@
 		</tbody>
 	
 	</table>
-	
+</div>	
 </body>
 </html>
