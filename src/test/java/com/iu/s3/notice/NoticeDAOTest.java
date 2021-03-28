@@ -2,6 +2,7 @@ package com.iu.s3.notice;
 
 import static org.junit.Assert.*;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -13,6 +14,22 @@ public class NoticeDAOTest extends MyAbstractTest {
 
    @Autowired
    private NoticeDAO noticeDAO;
+
+   
+   @Test
+	public void setInsertTest()throws Exception{
+	   
+		NoticeDTO noticeDTO = new NoticeDTO();
+		noticeDTO.setTitle("t5");
+		noticeDTO.setContents("lolin");
+		noticeDTO.setWriter("iu5");
+
+		int result = noticeDAO.setInsert(noticeDTO);
+		assertEquals(1, result);
+	}
+
+   
+   
    
    //@Test
 	public void setDeleteTest()throws Exception{
@@ -24,7 +41,7 @@ public class NoticeDAOTest extends MyAbstractTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void setUpdateTest()throws Exception{
 		NoticeDTO noticeDTO = new NoticeDTO();
 		noticeDTO.setNum(3);

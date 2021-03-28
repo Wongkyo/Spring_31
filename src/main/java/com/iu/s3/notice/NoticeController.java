@@ -52,7 +52,15 @@ public class NoticeController {
 		return mv;
 	}
 	
-	
+	@RequestMapping("noticeInsert")
+	public void setInset() throws Exception {
+		
+	}
+	@RequestMapping(value = "noticeInsert", method = RequestMethod.POST)
+	public String setInset(NoticeDTO noticeDTO) throws Exception {
+		int result = noticeService.setInsert(noticeDTO);
+		return "redirect:noticeList";
+	}
 	
 	
 }

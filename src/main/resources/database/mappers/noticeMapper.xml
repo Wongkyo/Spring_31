@@ -5,6 +5,10 @@
     
    <mapper namespace="com.iu.s3.notice.NoticeDAO">
    
+   <insert id="setInsert" parameterType="com.iu.s3.notice.NoticeDTO">
+		insert into notice values (notice_seq.nextval, #{title}, #{writer}, #{contents}, 0, sysdate) 
+	</insert>
+   
    <select id="getSelect" parameterType="com.iu.s3.notice.NoticeDTO" resultType="com.iu.s3.notice.NoticeDTO">
    	select * from notice where num=${num}
    </select>
