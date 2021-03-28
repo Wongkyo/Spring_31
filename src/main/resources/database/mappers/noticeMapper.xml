@@ -14,5 +14,14 @@
       select * from notice order by num desc
    </select>
 
+	<update id="setUpdate" parameterType="com.iu.s3.notice.NoticeDTO">
+		update notice set title=#{title}, contents=#{contents} where num=#{num}
+	</update>
+	
+	<delete id="setDelete" parameterType="com.iu.s3.notice.NoticeDTO">
+		delete notice where num=#{num}
+	
+	</delete>
+	
 
    </mapper>
