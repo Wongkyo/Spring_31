@@ -13,11 +13,16 @@ public class NoticeService {
 	@Autowired
 	private NoticeDAO noticeDAO;
 	
-	public List<NoticeDTO> getList(long curPage)throws Exception{
-		Pager pager = new Pager();
-		long perPage=10;
-		pager.setStartRow((curPage)*perPage+1);
-		pager.setLastRow(curPage*perPage);
+	public List<NoticeDTO> getList(Pager pager)throws Exception{
+		int perPage=10; // 한 페이지당 보여줄 글의 갯수
+		
+		//--- startRow, lastRow -----------------
+		long startRow = (pager.getCurPage()-1)*perPage+1;
+		long lastRow = pager.getCurPage()*perPage;
+		
+		pager.setStartRow(startRow);
+		pager.setLastRow(lastRow);
+		//----------------------------------------
 		return noticeDAO.getList(pager);
 	}
 	
