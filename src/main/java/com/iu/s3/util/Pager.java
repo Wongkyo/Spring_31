@@ -6,6 +6,22 @@ public class Pager {
 	private long startRow;
 	private long lastRow;
 
+	private long startNum;
+	private long lastNum;
+	
+	public long getStartNum() {
+		return startNum;
+	}
+	public void setStartNum(long startNum) {
+		this.startNum = startNum;
+	}
+	public long getLastNum() {
+		return lastNum;
+	}
+	public void setLastNum(long lastNum) {
+		this.lastNum = lastNum;
+	}
+
 	public long getCurPage() {
 		if(this.curPage<1) {
 			this.curPage=1;

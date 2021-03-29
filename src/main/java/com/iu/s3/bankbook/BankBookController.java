@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.iu.s3.util.Pager;
+
 @Controller
 @RequestMapping("/bankbook/**")
 public class BankBookController {
@@ -41,9 +43,14 @@ public class BankBookController {
 	}
 	
 	@RequestMapping("bankbookList")
-	public void getList(Model model)throws Exception{
-		List<BankBookDTO> ar = bankBookService.getList();
-		model.addAttribute("list", ar);
+	public ModelAndView getList(Pager pager)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<BankBookDTO> ar = bankBookService.getList(pager);
+		mv.addObject("list", ar);
+		mv.setViewName("bankbook/bankbookList");
+		mv.addObject("pager", pager);
+		return mv;
+	
 	}
 	
 	@RequestMapping(value = "bankbookSelect")

@@ -36,11 +36,11 @@ public class BankBookDAOTest extends MyAbstractTest {
 		assertEquals(1, result);
 	}
 	
-	//@Test
-	public void getListTest()throws Exception{
-		List<BankBookDTO> ar = bankBookDAO.getList();
-		assertNotEquals(0, ar.size());
-	}
+//	//@Test
+//	public void getListTest()throws Exception{
+//		List<BankBookDTO> ar = bankBookDAO.getList();
+//		assertNotEquals(0, ar.size());
+//	}
 	
 	//@Test
 	public void getSelectTest()throws Exception{
@@ -50,13 +50,19 @@ public class BankBookDAOTest extends MyAbstractTest {
 	
 	@Test
 	public void setWriteTest() throws Exception {
+		for(int i=0;i<200;i++) {
 		BankBookDTO bankBookDTO = new BankBookDTO();
-		bankBookDTO.setBookName("Test2");
-		bankBookDTO.setBookRate(0.123);
+		bankBookDTO.setBookName("BookName"+i);
+		bankBookDTO.setBookRate(0.12);
 		bankBookDTO.setBookSale("Y");
 		int result = bankBookDAO.setWrite(bankBookDTO);
 		
-		assertEquals(1, result);
+		if(i%10 == 0){
+		Thread.sleep(500);
+		}
+		
+		}
+		//assertEquals(1, result);
 	}
 	
 	
