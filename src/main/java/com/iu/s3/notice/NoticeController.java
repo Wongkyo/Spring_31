@@ -34,9 +34,10 @@ public class NoticeController {
 		System.out.println();
 		int result = noticeService.setUpdate(noticeDTO);
 		
-		return "redirect:./noticeList";
-		
+		return "redirect:./noticeList";	
 	}
+	
+	
 	@RequestMapping("noticeList")
 	public void getList(Model model )throws Exception{
 		List<NoticeDTO> ar = noticeService.getList();

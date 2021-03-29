@@ -6,19 +6,16 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class NoticeDTO {
 	
-	private int num;
+	private long num;
 	private String title;
 	private String writer;
 	private String contents;
-	private int hit;
-	
 	private Date regdate;
 	
-	
-	public int getNum() {
+	public long getNum() {
 		return num;
 	}
-	public void setNum(int num) {
+	public void setNum(long num) {
 		this.num = num;
 	}
 	public String getTitle() {
@@ -39,18 +36,19 @@ public class NoticeDTO {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	public int getHit() {
-		return hit;
-	}
-	public void setHit(int hit) {
-		this.hit = hit;
-	}
 	public Date getRegdate() {
 		return regdate;
 	}
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
+	public long getHit() {
+		return hit;
+	}
+	public void setHit(long hit) {
+		this.hit = hit;
+	}
+	private long hit;
 	
 	
 	
