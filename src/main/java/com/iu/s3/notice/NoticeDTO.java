@@ -11,6 +11,7 @@ public class NoticeDTO {
 	private String writer;
 	private String contents;
 	private Date regdate;
+	private long hit;
 	
 	public long getNum() {
 		return num;
@@ -48,7 +49,7 @@ public class NoticeDTO {
 	public void setHit(long hit) {
 		this.hit = hit;
 	}
-	private long hit;
+	
 	
 	
 	

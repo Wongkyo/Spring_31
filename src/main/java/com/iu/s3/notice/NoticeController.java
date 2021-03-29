@@ -39,9 +39,12 @@ public class NoticeController {
 	
 	
 	@RequestMapping("noticeList")
-	public void getList(Model model )throws Exception{
-		List<NoticeDTO> ar = noticeService.getList();
-		model.addAttribute("list", ar);
+	public ModelAndView getList(long curPage)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<NoticeDTO> ar = noticeService.getList(curPage);
+		mv.addObject("list", ar);
+		mv.setViewName("notice/noticeList");
+		return mv;
 	}
 	
 	@RequestMapping(value = "noticeSelect")

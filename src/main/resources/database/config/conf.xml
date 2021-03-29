@@ -9,5 +9,6 @@
 		<typeAlias type="com.iu.s3.bankbook.BankBookDTO" alias="BankBookDTO"/>
 		<typeAlias type="com.iu.s3.account.AccountDTO" alias="AccountDTO"/>
 		<typeAlias type="com.iu.s3.notice.NoticeDTO" alias="NoticeDTO"/>
+		<typeAlias type="com.iu.s3.util.Pager" alias="Pager"/>
 	</typeAliases>
 </configuration>  
