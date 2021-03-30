@@ -49,11 +49,15 @@
 	
 	<div class="container">
  	<ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+ 	<c:if test="${pager.pre}">
+    <li class="page-item"><a class="page-link" href="./noticeList?curPage=${pager.startNum-1 }">Previous</a></li>
+    </c:if>
     <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
     <li class="page-item"><a class="page-link" href="./noticeList?curPage=${i}">${i}</a></li>
     </c:forEach>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    <c:if test="${pager.next}">
+    <li class="page-item"><a class="page-link" href="./noticeList?curPage=${pager.lastNum+1}">Next</a></li>
+  	</c:if>
   </ul>
 </div>
 	

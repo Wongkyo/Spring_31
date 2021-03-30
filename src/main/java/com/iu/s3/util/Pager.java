@@ -9,6 +9,22 @@ public class Pager {
 	private long startNum;
 	private long lastNum;
 	
+	private boolean pre; // 이전 block이 있으면 true 없으면 false
+	private boolean next; // 다음 block이 있으면 true 없으면 false
+	
+	
+	public boolean isPre() {
+		return pre;
+	}
+	public void setPre(boolean pre) {
+		this.pre = pre;
+	}
+	public boolean isNext() {
+		return next;
+	}
+	public void setNext(boolean next) {
+		this.next = next;
+	}
 	public long getStartNum() {
 		return startNum;
 	}
