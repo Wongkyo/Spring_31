@@ -5,8 +5,24 @@
 
 <mapper namespace="com.iu.s3.bankbook.BankBookDAO">
 	
-	<select id="getTotalCount" resultType="Long">
+	<select id="getTotalCount" resultType="Long" parameterType="Pager">
 		select count(bookNumber) from bankbook
+		where
+		<choose>
+					<when test="kind=='BookName'">
+						bookName
+					</when>
+				
+					<when test="kind=='BookRate'">
+						bookRate
+					</when>
+				
+					<otherwise>
+						bookSale
+					</otherwise>
+				
+				</choose>
+				like '%'|| #{search} ||'%' and bookNumber>0
 	</select>
 	
 	<update id="setUpdate" parameterType="BankBookDTO">
@@ -24,13 +40,33 @@
 	<select id="getList" resultType="BankBookDTO" parameterType="Pager">
 		select * from
 		(select rownum R, N.* from
-			(select * from bankbook where bookNumber>0 order by bookNumber desc) N ) 
+			(select * from bankbook where
+				<choose>
+					<when test="kind=='BookName'">
+						bookName
+					</when>
+				
+					<when test="kind=='BookRate'">
+						bookRate
+					</when>
+				
+					<otherwise>
+						sale
+					</otherwise>
+				
+				</choose>
+			
+			
+		like '%'|| #{search} ||'%' and bookNumber>0 order by bookNumber desc) N ) 
 	where R	between #{startRow} and #{lastRow}
+	
+	
+	
+	
 	</select>
 	
 	<delete id="setDelete" parameterType="BankBookDTO">
 		delete bankbook where booknumber = #{bookNumber}
 	</delete>
 	
-
-</mapper>  
+</mapper>

@@ -21,8 +21,8 @@ public class BankBookDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE="com.iu.s3.bankbook.BankBookDAO.";
 
-	public Long getTotalCount()throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"getTotalCount");
+	public Long getTotalCount(Pager pager)throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getTotalCount", pager);
 	}
 	
 	

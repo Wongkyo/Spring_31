@@ -31,7 +31,7 @@ public class BankBookService {
 		pager.setStartRow(startRow);
 		pager.setLastRow(lastRow);
 		
-		long totalCount=bankBookDAO.getTotalCount();
+		long totalCount=bankBookDAO.getTotalCount(pager);
 		
 		long totalPage= totalCount/perPage;
 		if(totalCount%perPage !=0) {
@@ -50,6 +50,19 @@ public class BankBookService {
 		
 		long startNum = (curBlock-1)*perBlock+1;
 		long lastNum = curBlock*perBlock;
+		
+		if(curBlock == totalBlock) {
+			lastNum = totalPage;
+		}
+		
+		if(curBlock != 1) {
+			pager.setPre(true);
+		}
+		
+		if(curBlock != totalBlock) {
+			pager.setNext(true);
+		}
+		
 		
 		pager.setStartNum(startNum);
 		pager.setLastNum(lastNum);
