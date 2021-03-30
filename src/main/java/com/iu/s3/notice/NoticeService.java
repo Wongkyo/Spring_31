@@ -28,7 +28,7 @@ public class NoticeService {
 		
 		//----------------------------------------
 		//1. totalCount
-		long totalCount= noticeDAO.getTotalCount(); //디에이오에서 받아야함
+		long totalCount= noticeDAO.getTotalCount(pager); //디에이오에서 받아야함
 		
 		//2. totalPage
 		long totalPage= totalCount/perPage;	
