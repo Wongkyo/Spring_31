@@ -1,0 +1,7 @@
+/**
+ * 
+ */
+
+function check() {
+	alert("check");
+}
