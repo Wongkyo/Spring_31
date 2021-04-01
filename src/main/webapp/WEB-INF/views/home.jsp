@@ -19,13 +19,32 @@
 	<c:import url="./template/header.jsp"></c:import>
 
 	<button onclick="go()">BUTTON</button>
-
+	<button id="btn">CLICK</button>
+	<button id="btn2">CLICK2</button>
+	<h1>version 3</h1>
 
 
 	<script type="text/javascript">
-		function go() {
-			
-		}
+	let btn = document.getElementById("btn");
+	let btn2 = document.getElementById("btn2");
+	
+	//btn2.addEventListener("click", go);
+	btn2.addEventListener("click", function(){
+		alert("btn2")
+		go();
+	});
+	
+	
+	//btn.onclick=go;
+	btn.onclick = function() {
+		alert("익명함수");
+		go();
+	}
+	
+	function go() {
+		alert("hello");
+	}
+				
 	</script>
 
 </body>
