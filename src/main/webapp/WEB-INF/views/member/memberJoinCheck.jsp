@@ -16,7 +16,7 @@
 		<div class="form-check">
 			<!-- check 1 -->
 			<label class="form-check-label"> <input type="checkbox"
-				class="form-check-input" value="">전체동의
+				class="form-check-input" id="all" value="">전체동의
 			</label>
 		</div>
 
@@ -24,7 +24,7 @@
 		<div class="form-check">
 			<!-- check 1 -->
 			<label class="form-check-label"> <input type="checkbox"
-				class="form-check-input" value="">동의
+				class="form-check-input check" value="">동의
 			</label>
 		</div>
 
@@ -36,8 +36,8 @@
 
 		<div class="form-check">
 			<!-- check 2 -->
-			<label class="form-check-label"> <input type="checkbox"
-				class="form-check-input" value="">동의
+			<label class="form-check-label "> <input type="checkbox"
+				class="form-check-input check" value="">동의
 			</label>
 		</div>
 
@@ -50,7 +50,7 @@
 		<div class="form-check">
 			<!-- check 3 -->
 			<label class="form-check-label"> <input type="checkbox"
-				class="form-check-input" value="">동의
+				class="form-check-input check" value="">동의
 			</label>
 		</div>
 
@@ -63,7 +63,7 @@
 		<div class="form-check">
 			<!-- check 4 -->
 			<label class="form-check-label"> <input type="checkbox"
-				class="form-check-input" value="">동의
+				class="form-check-input check" value="">동의
 			</label>
 		</div>
 
@@ -72,8 +72,10 @@
 			<p>Bootstrap is the most popular HTML, CSS...</p>
 		</div>
 
-	<button class="btn btn-danger" onclick="check()">JOIN</button>
-<script type="text/javascript" src="../resources/js/memberJoinCheck.js"></script>
+
+		<button class="btn btn-danger" onclick="check()">JOIN</button>
+		<script type="text/javascript"
+			src="../resources/js/memberJoinCheck.js"></script>
 
 
 	</div>
