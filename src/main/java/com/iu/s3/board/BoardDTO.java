@@ -1,18 +1,15 @@
-package com.iu.s3.notice;
+package com.iu.s3.board;
 
 import java.sql.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
+public class BoardDTO {
 
-public class NoticeDTO {
-	
 	private long num;
 	private String title;
 	private String writer;
 	private String contents;
 	private Date regdate;
 	private long hit;
-	
 	public long getNum() {
 		return num;
 	}
@@ -49,8 +46,5 @@ public class NoticeDTO {
 	public void setHit(long hit) {
 		this.hit = hit;
 	}
-	
-	
-	
 	
 }
