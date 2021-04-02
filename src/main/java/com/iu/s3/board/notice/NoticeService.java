@@ -20,7 +20,7 @@ public class NoticeService implements BoardService {
 	@Override //Select
 	public BoardDTO getSelect(BoardDTO boardDTO) throws Exception {
 	
-		return null;
+		return noticeDAO.getSelect(boardDTO);
 	}
 
 
