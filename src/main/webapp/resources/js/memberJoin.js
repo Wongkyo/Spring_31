@@ -31,6 +31,7 @@ pw.addEventListener("change", function(){
 // **** PW CHECK *********************************
 
 pw.addEventListener("blur", function(){
+	pwCheckResult=false;
 	let message = "8글자 미만입니다";
 	let c = "r1";
 	if(pw.value.length>7){
@@ -53,6 +54,8 @@ id.addEventListener("blur", function(){
 		message = "6글자 이상 입니다";
 		c = "r2";
 		idCheckResult=true;
+	}else{
+		idCheckResult=false;
 	}
 	
 	let idResult = document.getElementById("idResult");

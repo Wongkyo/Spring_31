@@ -73,7 +73,7 @@
 		</div>
 
 
-		<button class="btn btn-danger" >JOIN</button>
+		<button class="btn btn-danger" id="btn" >JOIN</button>
 	<script type="text/javascript" src="../resources/js/memberJoinCheck.js"></script>
 
 

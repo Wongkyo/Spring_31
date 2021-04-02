@@ -59,9 +59,9 @@
 				<!-- 비어 있으면 X -->
 			</div>			
 			
-			<input type="button" id="btn" value="JOIN" class="btn btn-primary" >
+			<input type="submit" id="btn" value="JOIN" class="btn btn-primary" >
 		</form>
 	</div>
-		<script type="text/javascript" src="../resources/js/memberJoin.js"></script>
+<!-- 		<script type="text/javascript" src="../resources/js/memberJoin.js"></script> -->
 </body>
 </html>
