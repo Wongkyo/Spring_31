@@ -3,6 +3,7 @@ package com.iu.s3.board;
 import java.util.List;
 
 import com.iu.s3.util.Pager;
+import com.iu.s3.util.Pager_backup;
 
 public interface BoardDAO {
 	//상수, 추상메서드
@@ -30,3 +31,4 @@ public interface BoardDAO {
 	public int setDelete(BoardDTO boardDTO)throws Exception;
 	
 }
+
