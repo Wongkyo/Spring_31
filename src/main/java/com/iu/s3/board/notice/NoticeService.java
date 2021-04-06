@@ -38,7 +38,7 @@ public class NoticeService implements BoardService {
 	@Override //Update
 	public int setUpdate(BoardDTO boardDTO) throws Exception {
 		
-		return 0;
+		return noticeDAO.setUpdate(boardDTO);
 	}
 
 
@@ -46,7 +46,7 @@ public class NoticeService implements BoardService {
 	@Override //Delete
 	public int setDelete(BoardDTO boardDTO) throws Exception {
 
-		return 0;
+		return noticeDAO.setDelete(boardDTO);
 	}
 
 

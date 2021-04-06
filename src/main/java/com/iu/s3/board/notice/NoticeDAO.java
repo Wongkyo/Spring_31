@@ -53,12 +53,12 @@ public class NoticeDAO implements BoardDAO {
 	@Override //Update
 	public int setUpdate(BoardDTO boardDTO) throws Exception {
 		
-		return 0;
+		return sqlSession.update(NAMESPACE+"setUpdate", boardDTO);
 	}
 
 	@Override //Delete
 	public int setDelete(BoardDTO boardDTO) throws Exception {
-		return 0;
+		return sqlSession.delete(NAMESPACE+"setDelete", boardDTO);
 	}
 	
 	

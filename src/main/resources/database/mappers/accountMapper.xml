@@ -12,5 +12,9 @@
 		insert into account values(#{accountNumber}, 0, sysdate, #{id}, #{bookNumber})
 	</insert>
 
+	<delete id="setDelete" parameterType="BoardDTO">
+		delete qna where num=#{num}
+	</delete>
+
 
 </mapper>  

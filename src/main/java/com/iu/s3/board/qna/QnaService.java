@@ -16,7 +16,7 @@ public class QnaService implements BoardService {
 	@Autowired
 	private QnaDAO qnaDAO;
 
-	public int setReply(QnaDTO qnaDTO)throws Exception{
+	public int setReply(QnaDTO qnaDTO)throws Exception{ //SetReply
 		//부모글의 ref, step, depth 조회
 		BoardDTO boardDTO = qnaDAO.getSelect(qnaDTO);
 		QnaDTO parent =(QnaDTO)boardDTO;
@@ -63,13 +63,13 @@ public class QnaService implements BoardService {
 	@Override //Update
 	public int setUpdate(BoardDTO boardDTO) throws Exception {
 		
-		return 0;
+		return qnaDAO.setUpdate(boardDTO);
 	}
 
 	@Override //Delete
 	public int setDelete(BoardDTO boardDTO) throws Exception {
 	
-		return 0;
+		return qnaDAO.setDelete(boardDTO);
 	}
 	
 	

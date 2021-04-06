@@ -55,4 +55,13 @@
 		insert into notice values(notice_seq.nextval,#{title}, #{writer}, #{contents}, sysdate, 0)
 	</insert>
 
+	<delete id="setDelete" parameterType="BoardDTO">
+		delete notice where num=#{num}
+	</delete>
+	
+	<update id="setUpdate" parameterType="BoardDTO">
+		update notice set title=#{title}, contents=#{contents} where num=#{num}
+	</update>
+	
+	
 </mapper> 

@@ -57,15 +57,14 @@ public class QnaDAO implements BoardDAO{
 	@Override //Update
 	public int setUpdate(BoardDTO boardDTO) throws Exception {
 		
-		return 0;
+		return sqlSession.update(NAMESPACE+"setUpdate", boardDTO);
 	}
 
-	@Override //Delete
+	@Override//Delete
 	public int setDelete(BoardDTO boardDTO) throws Exception {
-		
-		return 0;
+		return sqlSession.delete(NAMESPACE+"setDelete", boardDTO);
 	}
-
+	
 	@Autowired
 	private SqlSession sqlSession;
 	private final String NAMESPACE="com.iu.s3.board.qna.QnaDAO.";
