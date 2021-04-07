@@ -11,11 +11,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.iu.s3.util.FileManager;
+
 @Service
 public class MemberService {
 	
 	@Autowired
 	private MemberDAO memberDAO;
+	
+	@Autowired
+	private FileManager fileManager;
+
 	
 	public int memberUpdate(MemberDTO memberDTO)throws Exception{
 		return memberDAO.memberUpdate(memberDTO);
@@ -30,22 +36,8 @@ public class MemberService {
 	}
 												//이진데이터
 	public int memberJoin(MemberDTO memberDTO,MultipartFile avatar, HttpSession session)throws Exception{
-			//makePath()
-			
-			
-			
-			//5. HDD에 파일 저장
-			//file = new File(file, name);
-
-			//	1) FileCopyUtils 클래스의 copy 메서드 사용
-			//FileCopyUtils.copy(avatar.getBytes(), file);	       
-			
-			//	2) MultipartFile 클래스의 메서드 사용
-			file = new File(file,fileName);
-			avatar.transferTo(file);
-			
-			
-			
+		fileManager.save("member", avatar, session);
+		
 		return 0;
 		//return memberDAO.memberJoin(memberDTO);
 	}

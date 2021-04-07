@@ -5,6 +5,11 @@
 
 <mapper namespace="com.iu.s3.member.MemberDAO">
 
+	<insert id="setFileInsert" parameterType="MemberFileDTO">
+    	insert into memberFile values(FN_SEQ.nextval, #{id},#{fileName} , #{origineName})
+    </insert>
+  
+	
 	<update id="memberUpdate" parameterType="MemberDTO">
 		update member set pw=#{pw}, name=#{name}, email=#{email}, phone=#{phone} where id=#{id}
 	</update>
