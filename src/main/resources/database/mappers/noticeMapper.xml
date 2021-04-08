@@ -78,7 +78,7 @@
 	</select>
 	
 	<insert id="setInsert" parameterType="BoardDTO">
-		insert into notice values(#{num},#{title}, #{writer}, #{contents}, sysdate, 0)
+		insert into notice values(#{num} ,#{title}, #{writer}, #{contents}, sysdate, 0)
 	</insert>
 
 	<delete id="setDelete" parameterType="BoardDTO">
