@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.iu.s3.board.BoardDTO;
@@ -97,9 +98,12 @@ public class NoticeController {
 	}
 	
 	@RequestMapping(value = "noticeInsert", method = RequestMethod.POST) //Insert
-	public String setInsert(BoardDTO boardDTO, Model model)throws Exception{
-		int result = noticeService.setInsert(boardDTO);
+	public String setInsert(BoardDTO boardDTO, Model model, MultipartFile[] files)throws Exception{
 		
+		
+		//int result = noticeService.setInsert(boardDTO);
+		
+		int result=0;
 		String message="등록 실패";
 		
 		if(result>0) {
