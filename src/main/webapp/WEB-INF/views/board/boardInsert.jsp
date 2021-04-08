@@ -20,7 +20,7 @@
 	<h1>${board}form</h1>
 
 	<div class="container">
-		<form id="frm" action="./${board}Insert" method="post">
+		<form id="frm" action="./${board}Insert" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="writer">Writer</label> <input type="text"
 					readonly="readonly" value="${member.id}"
@@ -50,7 +50,7 @@
 		<div class="input-group">
 			<div class="custom-file">
 				<input type="file"  id="inputGroupFile04"
-					class="form-control-file border" id="files">
+					class="form-control-file border" name="files">
 			</div>
 		<div class="input-group-append delete">
 			<input class="btn btn-outline-secondary" type="button"

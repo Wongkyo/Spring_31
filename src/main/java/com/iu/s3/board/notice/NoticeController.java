@@ -100,10 +100,9 @@ public class NoticeController {
 	@RequestMapping(value = "noticeInsert", method = RequestMethod.POST) //Insert
 	public String setInsert(BoardDTO boardDTO, Model model, MultipartFile[] files)throws Exception{
 		
+		int result = noticeService.setInsert(boardDTO,files);
 		
-		//int result = noticeService.setInsert(boardDTO);
 		
-		int result=0;
 		String message="등록 실패";
 		
 		if(result>0) {
