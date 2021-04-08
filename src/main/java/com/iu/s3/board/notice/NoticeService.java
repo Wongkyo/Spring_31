@@ -21,16 +21,17 @@ public class NoticeService implements BoardService {
 	
 	@Autowired
 	private NoticeDAO noticeDAO;
+	
 	@Autowired
-	private FileManager filemanager;
+	private FileManager fileManager;
+	
 	@Autowired
 	private HttpSession session;
 	
 
 	
 	@Override //Select
-	public BoardDTO getSelect(BoardDTO boardDTO) throws Exception {
-	
+	public BoardDTO getSelect(BoardDTO boardDTO) throws Exception {	
 		return noticeDAO.getSelect(boardDTO);
 	}
 
@@ -49,9 +50,9 @@ public class NoticeService implements BoardService {
 		
 		for(MultipartFile mf: files) {
 			BoardFileDTO boardFileDTO = new BoardFileDTO();
-			String fileName= filemanager.save("notice", mf, session);
+			String fileName= fileManager.save("notice", mf, session);
 			
-			boardDTO.setNum(num);
+			boardFileDTO.setNum(num);
 			boardFileDTO.setFileName(fileName);
 			boardFileDTO.setOrigineName(mf.getOriginalFilename());
 			

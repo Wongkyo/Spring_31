@@ -8,15 +8,17 @@ import com.iu.s3.board.BoardFileDTO;
 
 public class NoticeDTO extends BoardDTO {
 	
-	private List<BoardFileDTO> noticeFiles;
 
-	public List<BoardFileDTO> getNoticeFiles() {
-		return noticeFiles;
+	private List<BoardFileDTO> boardFiles;
+
+	public List<BoardFileDTO> getBoardFiles() {
+		return boardFiles;
 	}
 
-	public void setNoticeFiles(List<BoardFileDTO> noticeFiles) {
-		this.noticeFiles = noticeFiles;
+	public void setBoardFiles(List<BoardFileDTO> boardFiles) {
+		this.boardFiles = boardFiles;
 	}
+
 	
 
 

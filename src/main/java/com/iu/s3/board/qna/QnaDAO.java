@@ -8,20 +8,25 @@ import org.springframework.stereotype.Repository;
 
 import com.iu.s3.board.BoardDAO;
 import com.iu.s3.board.BoardDTO;
+import com.iu.s3.board.BoardFileDTO;
 import com.iu.s3.util.Pager;
 import com.iu.s3.util.Pager_backup;
 
 @Repository
 public class QnaDAO implements BoardDAO{
 	
-	public int setReplyUpdate(QnaDTO qnaDTO)throws Exception{
+	@Autowired
+	private SqlSession sqlSession;
+	
+	private final String NAMESPACE="com.iu.s3.board.qna.QnaDAO.";
+	
+	public int setReplyUpdate(QnaDTO qnaDTO)throws Exception{ // ReplyUpdate
 	   return sqlSession.update(NAMESPACE+"setReplyUpdate", qnaDTO);
 	}
 	   
-	public int setReply(QnaDTO qnaDTO)throws Exception{
+	public int setReply(QnaDTO qnaDTO)throws Exception{ // SetReply
 	    return sqlSession.insert(NAMESPACE+"setReply", qnaDTO);
 	}
-
 	
 	@Override //List
 	public List<BoardDTO> getList(Pager pager) throws Exception {
@@ -47,11 +52,16 @@ public class QnaDAO implements BoardDAO{
 		return sqlSession.update(NAMESPACE+"setHitUpdate", boardDTO);
 	}
 
-	   @Override //Insert
-	   public int setInsert(BoardDTO boardDTO) throws Exception {
+	@Override //Insert
+	public int setInsert(BoardDTO boardDTO) throws Exception {
 	     
-	      return sqlSession.insert(NAMESPACE+"setInsert", boardDTO);
-	   }
+	    return sqlSession.insert(NAMESPACE+"setInsert", boardDTO);
+	}
+	
+	//SetFileInsert
+	public int setFileInsert(BoardFileDTO boardFileDTO)throws Exception{
+		return sqlSession.insert(NAMESPACE+"setFileInsert", boardFileDTO);
+	}
 
 
 	@Override //Update
@@ -65,9 +75,7 @@ public class QnaDAO implements BoardDAO{
 		return sqlSession.delete(NAMESPACE+"setDelete", boardDTO);
 	}
 	
-	@Autowired
-	private SqlSession sqlSession;
-	private final String NAMESPACE="com.iu.s3.board.qna.QnaDAO.";
+	
 	
 	
 

@@ -24,7 +24,7 @@ public class NoticeController {
 	@Autowired
 	private NoticeService noticeService;
 	
-	@PostMapping
+	@PostMapping // update
 	public ModelAndView setUpdate(BoardDTO boardDTO, ModelAndView mv) throws Exception{
 		
 		int result = noticeService.setUpdate(boardDTO);
@@ -43,7 +43,7 @@ public class NoticeController {
 	}
 	
 	
-	@GetMapping
+	@GetMapping // update 
 	public ModelAndView setUpdate(BoardDTO boardDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		boardDTO = noticeService.getSelect(boardDTO);
@@ -54,7 +54,7 @@ public class NoticeController {
 		return mv;
 	}
 	
-	@PostMapping("noticeDelete")
+	@PostMapping("noticeDelete") // Delete
 	public ModelAndView setDelete(BoardDTO boardDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result = noticeService.setDelete(boardDTO);

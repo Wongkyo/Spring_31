@@ -18,7 +18,7 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
-	@RequestMapping("memberUpdate")
+	@RequestMapping("memberUpdate") // MemberUpdate
 	public void memberUpdate()throws Exception{}
 	
 	@RequestMapping(value="memberUpdate", method = RequestMethod.POST)
@@ -31,32 +31,32 @@ public class MemberController {
 		return "redirect:../";
 	}
 	
-	@RequestMapping("memberDelete")
+	@RequestMapping("memberDelete") // MemberDelete
 	public String memberDelete(HttpSession session)throws Exception{
 		MemberDTO memberDTO =(MemberDTO)session.getAttribute("member");
-		int result = memberService.memberDelete(memberDTO);
+		int result = memberService.memberDelete(memberDTO, session);
 		
 		session.invalidate();
 		
 		return "redirect:../";
 	}
 	
-	@RequestMapping("memberPage")
+	@RequestMapping("memberPage") //MemberPage
 	public void memberPage()throws Exception{
 		
 	}
 	
-	@RequestMapping("memberLogout")
+	@RequestMapping("memberLogout") //MemberLogout
 	public String memberLogout(HttpSession session)throws Exception{
 		session.invalidate();
 		return "redirect:../";
 	}
 	
 	
-	@RequestMapping("memberLogin")
+	@RequestMapping("memberLogin") //MemberLogin
 	public void memberLogin()throws Exception{}
 	
-	@RequestMapping(value="memberLogin", method = RequestMethod.POST)
+	@RequestMapping(value="memberLogin", method = RequestMethod.POST) //MemberLogin
 	public String memberLogin(MemberDTO memberDTO, HttpSession session)throws Exception{
 		memberDTO = memberService.memberLogin(memberDTO);
 		System.out.println(memberDTO);
@@ -67,15 +67,15 @@ public class MemberController {
 		return "redirect:../";
 	}
 	
-	@RequestMapping("memberJoinCheck")
+	@RequestMapping("memberJoinCheck") // MemberJoinCheck
 	public void memberJoinCheck()throws Exception{}
 	
 	
 	
-	@RequestMapping("memberJoin")
+	@RequestMapping("memberJoin") // MemberJoin
 	public void memberJoin()throws Exception{}
 	
-	@RequestMapping(value="memberJoin", method = RequestMethod.POST)
+	@RequestMapping(value="memberJoin", method = RequestMethod.POST) // MemberJoin
 	public String memberJoin(MemberDTO memberDTO,MultipartFile avatar, Model model,HttpSession session)throws Exception{
 		int result = memberService.memberJoin(memberDTO, avatar, session);
 		

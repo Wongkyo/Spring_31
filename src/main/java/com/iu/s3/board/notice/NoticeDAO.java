@@ -53,10 +53,12 @@ public class NoticeDAO implements BoardDAO {
 		return sqlSession.insert(NAMESPACE+"setInsert", boardDTO);
 	}
 
+	// GetNum
 	public long getNum()throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"getNum");
 	}
 	
+	// SetFileInsert
 	public int setFileInsert(BoardFileDTO boardFileDTO)throws Exception{
 		return sqlSession.insert(NAMESPACE+"setFileInsert", boardFileDTO);
 	}

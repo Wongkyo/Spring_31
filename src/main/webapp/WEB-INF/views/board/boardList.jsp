@@ -35,7 +35,7 @@
 								</c:catch> ${dto.title}
 						</a></td>
 						<td>${dto.writer}</td>
-						<td>${dto.regdate}</td>
+						<td>${dto.regDate}</td>
 						<td>${dto.hit}</td>
 					</tr>
 				</c:forEach>

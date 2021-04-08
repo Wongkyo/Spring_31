@@ -22,22 +22,27 @@ public class MemberService {
 	@Autowired
 	private FileManager fileManager;
 
-	
+	// MemberUpdate
 	public int memberUpdate(MemberDTO memberDTO)throws Exception{
 		return memberDAO.memberUpdate(memberDTO);
 	}
 	
-	public int memberDelete(MemberDTO memberDTO)throws Exception{
+	// MemberDelete
+	public int memberDelete(MemberDTO memberDTO,HttpSession session)throws Exception{
+		MemberFileDTO memberFileDTO = memberDAO.getMemberFile(memberDTO);	
+		boolean check = fileManager.delete("member", memberFileDTO.getFileName(), session);
 		return memberDAO.memberDelete(memberDTO);
 	}
 	
+	// MemberLogin
 	public MemberDTO memberLogin(MemberDTO memberDTO)throws Exception{
 		memberDTO = memberDAO.memberLogin(memberDTO);
 		//MemberFileDTO memberFileDTO = memberDAO.memberLoginFile(memberDTO);
 		//memberDTO.setMemberFileDTO(memberFileDTO);
 	return memberDTO;
-}
-												//이진데이터
+	}
+				
+	// MemberJoin
 	public int memberJoin(MemberDTO memberDTO,MultipartFile avatar, HttpSession session)throws Exception{
 		String fileName= fileManager.save("member", avatar, session);
 		
