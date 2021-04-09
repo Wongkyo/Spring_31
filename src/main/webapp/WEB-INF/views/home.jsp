@@ -46,30 +46,16 @@
 	</select>
 	
 	<div id="d1">
-		<div id="d2">
-		
-		</div>
+		<div id="d2"></div>
 	</div>
 
 	<script type="text/javascript">
-		/* $("btn2").click(function(){
-			$("#result").prepend('<a href="#">GO</a>');
-		}); */
-	
-		$("#btn").click(function(){
-			for(let i=1;i<13;i++){
-				$("#mon").appene("<option>"+i+"</option>");
-			}
+	$("#btn2").click(function () {
+		$.get("./test?num=3",function(data){
+			console.log(data);
+			$("#d2").html(data);
 		});
-		
-		$("#d1").click(function() {
-			console.log("parent");
-		});
-		
-		$("#d2").click(function() {
-			console.log("child");
-		});
-		
+	});
 	</script>
 
 </body>
