@@ -83,3 +83,24 @@ btn.addEventListener("click", function(){
 	}
 });
 
+
+// Id 중복 확인
+$("#id").blur(function(){
+	let id = $("#id").val();
+	$.get("./memberIdCheck?id="+id, function(result){
+		result = result.trim();
+		let str = "사용가능한 ID 입니다";
+		
+		if(result=='0'){
+			str="중복 ID 입니다"
+		}
+		
+		$("#idCheckResult").html(str);
+		
+	});
+});
+
+
+
+
+
