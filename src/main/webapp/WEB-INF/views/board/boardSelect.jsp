@@ -16,11 +16,18 @@
 	<h3>Title : ${dto.title}</h3>
 	<h3>Writer : ${dto.writer}</h3>
 	<h3>Contents : ${dto.contents}</h3>
+	
+	
 	<div>
 	<c:forEach items="${dto.boardFiles}" var="file">
-		<a href="../resources/upload/${board}/${file.fileName}">${file.origineName}</a>
+		<a href="../resources/upload${board}/${file.fileName}">${file.origineName}</a>
 	</c:forEach>
-	</div>
+	</div>	
+	
+	<h1>${file.origineName}</h1>
+	<a>${file.origineName}</a>
+	
+	
 	
 	<!-- 댓글 리스트 -->
 	<div id="comments" title="${dto.num}">

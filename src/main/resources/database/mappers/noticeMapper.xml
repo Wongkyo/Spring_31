@@ -5,6 +5,14 @@
 
 <mapper namespace="com.iu.s3.board.notice.NoticeDAO">
 	
+	<select id="getFileSelect" parameterType="BoardFileDTO" resultType="BoardFileDTO">
+		select * from noticeFiles where fileNum=#{fileNum}
+	</select>
+	
+	<delete id="setFileDelete" parameterType="BoardFileDTO">
+		delete noticeFiles where fileNum=#{fileNum}
+	</delete>
+	
 	<insert id="setFileInsert" parameterType="BoardFileDTO">
 		insert into noticeFiles values(file_seq.nextval, #{num}, #{fileName}, #{origineName})
 	</insert>
@@ -15,7 +23,7 @@
 		on N.num = NF.num
 		where N.num=#{num}
 	</select>
-	
+		
 	<resultMap type="NoticeDTO" id="selectResult">
 		<id property="num" column="num"/>
 		<result property="writer" column="writer"/>

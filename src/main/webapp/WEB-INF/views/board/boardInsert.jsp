@@ -9,7 +9,7 @@
 <c:import url="../template/bootStrap.jsp"></c:import>
 <style type="text/css">
 #sample {
-	/* display: none; */
+	display: none;
 }
 </style>
 </head>
@@ -37,8 +37,8 @@
 			</div>
 		
 			<input type="button" id="add" value="ADD" class="btn btn-danger">
-			<input type="button" id="del" value="DELETE" class="btn btn-info">
-			<div id="files"></div>
+			
+			<div id="files" title="0"></div>
 			
 			<input type="button" id="btn" value="WRITE" class="btn btn-primary">
 		</form>
@@ -52,14 +52,15 @@
 			</div>
 			<div class="input-group-append delete">
 				<input class="btn btn-outline-secondary" type="button"
-						id="inputGroupFileAddon04" value="Delete">
+					id="inputGroupFileAddon04" value="Delete">
 			</div>
 		</div>
-	
+
+
 	</div>
-	
+
 	<script type="text/javascript" src="../resources/jquery/boardInsert.js"></script>		
-	<script type="text/javascript" src="../resources/jquery/FileAdd.js"></script>
+	<script type="text/javascript" src="../resources/jquery/fileAdd.js"></script>
 
 </body>
 </html>
