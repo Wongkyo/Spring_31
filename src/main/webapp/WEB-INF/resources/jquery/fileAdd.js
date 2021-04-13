@@ -3,7 +3,6 @@
  */
 
 let count=$("#files").attr("title");
-alert(count);
 $("#add").click(function(){
 	if(count < 5){
 		let contents = $("#sample").html();
@@ -24,8 +23,6 @@ $("#files").on("click", ".delete", function(){
 	$(this).parent().remove();
 	count--;
 });
-
-
 
 
 

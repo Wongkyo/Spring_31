@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../template/bootStrap.jsp"></c:import>
+
+<!-- summer note -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+<!-- ----------- -->
 <style type="text/css">
 #sample {
 	display: none;
@@ -59,8 +64,14 @@
 
 	</div>
 
+
 	<script type="text/javascript" src="../resources/jquery/boardInsert.js"></script>		
 	<script type="text/javascript" src="../resources/jquery/fileAdd.js"></script>
+	<script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
+	
+		
+		
+	
 
 </body>
 </html>
