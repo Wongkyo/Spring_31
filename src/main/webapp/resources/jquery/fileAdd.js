@@ -23,8 +23,3 @@ $("#files").on("click", ".delete", function(){
 	$(this).parent().remove();
 	count--;
 });
-
-
-
-
-

@@ -26,12 +26,12 @@ public class NoticeController {
 	private NoticeService noticeService;
 	
 	@PostMapping("summerFileDelete")
-	public ModelAndView setSummerFile(String fileName)throws Exception{
+	public ModelAndView setSummerFileDelete(String fileName)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		boolean result = noticeService.setSummerFileDelete(fileName);
 		mv.addObject("result", result);
 		mv.setViewName("common/ajaxResult");
-		return mv;	
+		return mv;
 	}
 	
 	@PostMapping("summerFileUpload")
@@ -39,8 +39,8 @@ public class NoticeController {
 		ModelAndView mv = new ModelAndView();
 		System.out.println("Summer File Upload");
 		System.out.println(file.getOriginalFilename());
-		String fileName= noticeService.setSummerFileUpload(file);
-		fileName="../resources/upload/upload"+fileName;
+		String fileName = noticeService.setSummerFileUpload(file);
+		fileName = "../resources/upload/notice/"+fileName;
 		mv.addObject("result", fileName);
 		mv.setViewName("common/ajaxResult");
 		

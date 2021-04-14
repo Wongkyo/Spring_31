@@ -17,6 +17,7 @@
 	display: none;
 }
 </style>
+
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
@@ -65,13 +66,10 @@
 	</div>
 
 
-	<script type="text/javascript" src="../resources/jquery/boardInsert.js"></script>		
+<script type="text/javascript" src="../resources/jquery/boardInsert.js"></script>
 	<script type="text/javascript" src="../resources/jquery/fileAdd.js"></script>
 	<script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
 	
 		
-		
-	
-
 </body>
 </html>

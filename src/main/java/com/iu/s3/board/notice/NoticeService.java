@@ -29,13 +29,13 @@ public class NoticeService implements BoardService {
 	private HttpSession session;
 	
 	public boolean setSummerFileDelete(String fileName)throws Exception{
-		 boolean result= fileManager.delete("notice", fileName, session);
-		 return result;
+		boolean result = fileManager.delete("notice", fileName, session);
+		return result;
 	}
-
+	
 	public String setSummerFileUpload(MultipartFile file)throws Exception{
 		
-		String fileName =  fileManager.save("notice", file, session);
+		String fileName = fileManager.save("notice", file, session);
 		return fileName;
 	}
 	
@@ -46,7 +46,7 @@ public class NoticeService implements BoardService {
 		//2. table 삭제
 		int result = noticeDAO.setFileDelete(boardFileDTO);
 		//3. HDD 삭제
-		if(result> 0) {
+		if(result > 0) {
 			fileManager.delete("notice", boardFileDTO.getFileName(), session);
 		}
 		return result;
